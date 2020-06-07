@@ -1,4 +1,4 @@
-package xyz.asephermann.mynotesapp
+package xyz.asephermann.consumerapp
 
 import android.content.Intent
 import android.database.ContentObserver
@@ -14,15 +14,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import xyz.asephermann.mynotesapp.adapter.NoteAdapter
-import xyz.asephermann.mynotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
-import xyz.asephermann.mynotesapp.db.NoteHelper
-import xyz.asephermann.mynotesapp.entity.Note
-import xyz.asephermann.mynotesapp.helper.MappingHelper
+import xyz.asephermann.consumerapp.adapter.NoteAdapter
+import xyz.asephermann.consumerapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
+import xyz.asephermann.consumerapp.entity.Note
+import xyz.asephermann.consumerapp.helper.MappingHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: NoteAdapter
-    private lateinit var noteHelper: NoteHelper
 
     companion object {
         private const val EXTRA_STATE = "EXTRA_STATE"
@@ -32,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.title = "Notes"
+        supportActionBar?.title = "Consumer Notes"
 
         rv_notes.layoutManager = LinearLayoutManager(this)
         rv_notes.setHasFixedSize(true)
@@ -142,7 +140,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        noteHelper.close()
     }
 
     /**

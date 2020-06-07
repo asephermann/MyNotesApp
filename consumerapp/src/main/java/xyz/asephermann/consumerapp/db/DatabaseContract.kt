@@ -1,4 +1,4 @@
-package xyz.asephermann.mynotesapp.db
+package xyz.asephermann.consumerapp.db
 
 import android.net.Uri
 import android.provider.BaseColumns

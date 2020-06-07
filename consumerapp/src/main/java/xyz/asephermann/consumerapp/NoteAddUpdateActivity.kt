@@ -1,22 +1,20 @@
-package xyz.asephermann.mynotesapp
+package xyz.asephermann.consumerapp
 
 import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_note_add_update.*
-import xyz.asephermann.mynotesapp.db.DatabaseContract
-import xyz.asephermann.mynotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
-import xyz.asephermann.mynotesapp.db.DatabaseContract.NoteColumns.Companion.DATE
-import xyz.asephermann.mynotesapp.db.NoteHelper
-import xyz.asephermann.mynotesapp.entity.Note
-import xyz.asephermann.mynotesapp.helper.MappingHelper
+import xyz.asephermann.consumerapp.db.DatabaseContract
+import xyz.asephermann.consumerapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
+import xyz.asephermann.consumerapp.entity.Note
+import xyz.asephermann.consumerapp.helper.MappingHelper
 import java.text.SimpleDateFormat
 import java.util.*
 
